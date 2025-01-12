@@ -1,0 +1,44 @@
+<h1>Players</h1>
+
+<%= render "import" %>
+
+<h1>
+  Number of Players:
+  <%= @players.count %>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Card Title</th>
+			<th>Card ID</th>
+			<th>Contact</th>
+			<th>Gap Power</th>
+			<th>HR Power</th>
+			<th>Eye</th>
+			<th>Avoid K</th>
+			<th>Stuff</th>
+			<th>Movement</th>
+			<th>Control</th>
+			<th>Speed</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @players.each do |player| %>
+			<tr>
+				<td><%= player.Card_Title %></td>
+				<td><%= link_to player.cid, player_path(player) %></td>
+				<td><%= player.Contact %></td>
+				<td><%= player.Gap %></td>
+				<td><%= player.Power %></td>
+				<td><%= player.Eye %></td>
+				<td><%= player.Avoid_Ks %></td>
+				<td><%= player.Stuff %></td>
+				<td><%= player.Movement %></td>
+				<td><%= player.Control %></td>
+				<td><%= player.Speed %></td>
+			</tr>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,42 @@
+<h1>Statistics</h1>
+
+<%= render "import" %>
+
+<h1>
+  Statistics:
+  <%= @statistics.count %>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Team</th>
+			<th>Val</th>
+			<th>AB</th>
+			<th>Hits</th>
+			<th>HR</th>
+			<th>RBI</th>
+			<th>W</th>
+			<th>IP</th>
+			<th>Tourney</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @statistics.each do |statistic| %>
+			<tr>
+				<td><%= link_to statistic.player.LastName, player_path(statistic.player) %></td>
+				<td><%= statistic.org %></td>
+				<td><%= statistic.val %></td>
+				<td><%= statistic.hitterab %></td>
+				<td><%= statistic.h %></td>
+				<td><%= statistic.hitterhr %></td>
+				<td><%= statistic.rbi %></td>
+				<td><%= statistic.w %></td>
+				<td><%= statistic.ip %></td>
+				<td><%= link_to statistic.tournament.title, tournament_path(statistic.tournament) %></td> 
+			</tr>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
