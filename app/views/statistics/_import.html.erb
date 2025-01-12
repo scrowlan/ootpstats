@@ -1,6 +1,7 @@
 <%= form_tag import_statistics_path, method: :post, multipart: true do %>
   <%= file_field_tag :file, accept: ".csv" %>
   <%= collection_select(:statistic, :tournament_id, Tournament.all, :id, :title ) %>
+  <%= date_field(:statistic, :tourneydate) %>
   <%= submit_tag '⚙️ Import' %>
 <% end %>
 

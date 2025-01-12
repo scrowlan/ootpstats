@@ -159,6 +159,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_09_234853) do
 
   create_table "statistics", force: :cascade do |t|
     t.integer "cid"
+    t.date "tourneydate"
     t.string "name"
     t.integer "val"
     t.integer "cyear"

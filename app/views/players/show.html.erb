@@ -11,6 +11,22 @@
 </p>
 
 <p>
-  <strong></strong>
+  <strong>Player Tournaments</strong>
+  <table>
+    <thead>
+      <tr>
+        <th>Tournament</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @player.statistics.each do |statistic| %>
+      <tr>
+        <td><%= statistic.tournament.title %></td>
+        <td><%= statistic %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
   
 </p>
