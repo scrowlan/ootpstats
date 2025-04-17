@@ -1,4 +1,4 @@
-class CsvImportService
+class RunEnvironmentImportService
   require 'csv'
 
   def call(file)
