@@ -79,6 +79,6 @@ test:
 #
 production:
   <<: *default
-  database: ootp_production
-  username: ootp
+  database: ootp_prod
+  username: ootp_prod_user
   password: <%= ENV["OOTP_DATABASE_PASSWORD"] %>
