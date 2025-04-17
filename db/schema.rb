@@ -244,6 +244,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_09_234853) do
     t.string "dh"
     t.string "park"
     t.integer "year"
+    t.integer "cap"
+    t.integer "variant_limit"
     t.string "start"
   end
 

@@ -15,6 +15,8 @@ class TournamentImportService
       tournament_hash[:dh] = row['DH']
       tournament_hash[:park] = row['Park']
       tournament_hash[:year] = row['Year']
+      tournament_hash[:cap] = row['Cap']
+      tournament_hash[:variant_limit] = row['Variant Limit']
 
       Tournament.find_or_create_by!(tournament_hash)
       # for performance, you could create a separate job to import each user

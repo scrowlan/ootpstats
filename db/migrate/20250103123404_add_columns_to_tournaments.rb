@@ -7,5 +7,7 @@ class AddColumnsToTournaments < ActiveRecord::Migration[7.1]
     add_column :tournaments, :dh, :string
     add_column :tournaments, :park, :string
     add_column :tournaments, :year, :integer
+    add_column :tournaments, :cap, :integer
+    add_column :tournaments, :variant_limit, :integer 
   end
 end

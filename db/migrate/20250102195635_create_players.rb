@@ -6,9 +6,12 @@ class CreatePlayers < ActiveRecord::Migration[7.1]
       t.integer :Card_Value
       t.integer :Card_Type
       t.integer :Card_Sub_Type
+      t.string :Card_Badge
+      t.string :Card_Series
       t.integer :Year
       t.string :Peak
       t.string :Team
+      t.string :Franchise
       t.string :LastName
       t.string :FirstName
       t.string :NickName
@@ -113,13 +116,10 @@ class CreatePlayers < ActiveRecord::Migration[7.1]
       t.integer :limit
       t.integer :owned
       t.string :brefid
-      t.integer :Buy_Order
-      t.integer :High
+      t.integer :Buy_Order_High
       t.integer :Sell_Order_Low
       t.integer :Last_10_Price
-      t.integer :Buy_Order_High_CC
-      t.integer :Sell_Order_Low_CC
-      t.integer :Last_10_Price_CC
+      t.integer :Last_10_Price_VAR
       t.integer :date 
 
       t.timestamps

@@ -22,7 +22,7 @@
 	<tbody>
 		<% @tournaments.each do |tournament| %>
 			<tr>
-				<td><%= tournament.title %></td>
+				<td><%= link_to tournament.title, tournament_path(tournament.id) %></td>
 				<td><%= tournament.start %></td>
 				<td><%= tournament.mode %></td>
 				<td><%= tournament.entry_fee %></td>

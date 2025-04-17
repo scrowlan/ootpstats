@@ -15,17 +15,15 @@
   <table>
     <thead>
       <tr>
-        <th>Tournament</th>
-        <th>Count</th>
+        <th>Tournaments</th>
       </tr>
     </thead>
     <tbody>
-      <% @player.statistics.each do |statistic| %>
       <tr>
-        <td><%= statistic.tournament.title %></td>
-        <td><%= statistic %></td>
+        <% @tournaments.each do |tourneys, title| %>
+          <td><%= tourneys %></td>
+        <% end %>
       </tr>
-      <% end %>
     </tbody>
   </table>
   

@@ -28,3 +28,25 @@
 			</tr>
 	</tbody>
 </table>
+
+ <table>
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Rating</th>
+      <th>Position</th>
+      <th>Number of Teams Using</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tournament.players.each do |player| %>
+      <tr>
+        <td><%= player.FirstName %></td>
+        <td><%= player.Card_Value %></td>
+        <td><%= player.Position %></td>
+        <td><
+      </tr>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
