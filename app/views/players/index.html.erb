@@ -10,8 +10,8 @@
 <table>
 	<thead>
 		<tr>
-			<th>Card Title</th>
-			<th>Card ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
 			<th>Contact</th>
 			<th>Gap Power</th>
 			<th>HR Power</th>
@@ -26,8 +26,8 @@
 	<tbody>
 		<% @players.each do |player| %>
 			<tr>
-				<td><%= player.Card_Title %></td>
-				<td><%= link_to player.cid, player_path(player) %></td>
+				<td><%= link_to player.FirstName, player_path(player) %></td>
+				<td><%= link_to player.LastName, player_path(player) %></td>
 				<td><%= player.Contact %></td>
 				<td><%= player.Gap %></td>
 				<td><%= player.Power %></td>
