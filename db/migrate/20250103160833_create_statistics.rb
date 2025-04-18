@@ -2,6 +2,7 @@ class CreateStatistics < ActiveRecord::Migration[7.1]
   def change
     create_table :statistics do |t|
       t.integer :cid
+      t.integer :tournament_tier_id
       t.date :tourneydate
       t.string :name
       t.integer :val

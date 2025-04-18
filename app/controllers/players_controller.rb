@@ -14,7 +14,8 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
-    @tournaments = @player.tournaments
+    @tournament_tiers = @player.tournament_tiers
+    @statistics = @player.statistics
   end
 
   def index

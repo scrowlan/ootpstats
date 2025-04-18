@@ -8,22 +8,28 @@
 <p>
   <strong>Overall:</strong>
   <%= @player.Card_Value %>
+  <strong>CID:</strong>
+  <%= @player.cid %>
 </p>
-
 <p>
-  <strong>Player Tournaments</strong>
+  <strong>Player Statistics</strong>
   <table>
     <thead>
       <tr>
-        <th>Tournaments</th>
+        <th>Tourney</th>
+        <th>At Bats</th>
+        <th>HR</th>
+        
       </tr>
     </thead>
     <tbody>
+      <% @statistics.each do |stats| %>  
       <tr>
-        <% @tournaments.each do |tourneys, title| %>
-          <td><%= tourneys %></td>
-        <% end %>
+        <td><%= stats.tournament_tier.title %></td>
+        <td><%= stats.hitterab %></td>
+        <td><%= stats.hitterhr %></td>
       </tr>
+      <% end %>
     </tbody>
   </table>
   

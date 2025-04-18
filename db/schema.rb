@@ -20,9 +20,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_09_234853) do
     t.integer "Card_Value"
     t.integer "Card_Type"
     t.integer "Card_Sub_Type"
+    t.string "Card_Badge"
+    t.string "Card_Series"
     t.integer "Year"
     t.string "Peak"
     t.string "Team"
+    t.string "Franchise"
     t.string "LastName"
     t.string "FirstName"
     t.string "NickName"
@@ -127,13 +130,10 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_09_234853) do
     t.integer "limit"
     t.integer "owned"
     t.string "brefid"
-    t.integer "Buy_Order"
-    t.integer "High"
+    t.integer "Buy_Order_High"
     t.integer "Sell_Order_Low"
     t.integer "Last_10_Price"
-    t.integer "Buy_Order_High_CC"
-    t.integer "Sell_Order_Low_CC"
-    t.integer "Last_10_Price_CC"
+    t.integer "Last_10_Price_VAR"
     t.integer "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -159,6 +159,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_09_234853) do
 
   create_table "statistics", force: :cascade do |t|
     t.integer "cid"
+    t.integer "tournament_tier_id"
     t.date "tourneydate"
     t.string "name"
     t.integer "val"
@@ -231,11 +232,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_09_234853) do
     t.float "eff"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "tournament_id"
-    t.index ["tournament_id"], name: "index_statistics_on_tournament_id"
+    t.bigint "tournament_tiers_id"
+    t.index ["tournament_tiers_id"], name: "index_statistics_on_tournament_tiers_id"
   end
 
-  create_table "tournaments", force: :cascade do |t|
+  create_table "tournament_tiers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
@@ -250,5 +251,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_09_234853) do
   end
 
   add_foreign_key "statistics", "players", column: "cid", primary_key: "cid"
-  add_foreign_key "tournaments", "run_environments", column: "year", primary_key: "year"
+  add_foreign_key "tournament_tiers", "run_environments", column: "year", primary_key: "year"
 end

@@ -1,0 +1,36 @@
+<h1>Tournaments</h1>
+
+<%= render "import" %>
+
+<h1>
+  Tournaments:
+  <%= @tournament_tiers.count %>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Start</th>
+			<th>Mode</th>
+			<th>Entry Fee</th>
+			<th>DH</th>
+			<th>Park</th>
+			<th>Run Environment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @tournament_tiers.each do |tournament_tier| %>
+			<tr>
+				<td><%= link_to tournament_tier.title, tournament_tier_path(tournament_tier.id) %></td>
+				<td><%= tournament_tier.start %></td>
+				<td><%= tournament_tier.mode %></td>
+				<td><%= tournament_tier.entry_fee %></td>
+				<td><%= tournament_tier.dh %></td>
+				<td><%= tournament_tier.park %></td>
+				<td><%= link_to tournament_tier.run_environment.year, run_environment_path(tournament_tier.run_environment) %></td>
+			</tr>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   get 'statistics/new'
   get 'statistics/create'
   get 'statistics/import'
-  get 'tournaments/index'
-  get 'tournaments/show'
-  get 'tournaments/new'
-  get 'tournaments/create'
-  get 'tournaments/import'
+  get 'tournament_tiers/index'
+  get 'tournament_tiers/show'
+  get 'tournament_tiers/new'
+  get 'tournament_tiers/create'
+  get 'tournament_tiers/import'
   get 'pages/home'
   get 'run_environments/new'
   get 'run_environments/create'
@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :tournaments do
+  resources :tournament_tiers do
     collection do
       post :import
     end

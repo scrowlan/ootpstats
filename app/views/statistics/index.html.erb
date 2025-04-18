@@ -34,7 +34,7 @@
 				<td><%= statistic.rbi %></td>
 				<td><%= statistic.w %></td>
 				<td><%= statistic.ip %></td>
-				<td><%= link_to statistic.tournament.title, tournament_path(statistic.tournament) %></td> 
+				<td><%= link_to statistic.tournament_tier.title, tournament_tier_path(statistic.tournament_tier) %></td> 
 			</tr>
 			</tr>
 		<% end %>

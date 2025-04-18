@@ -1,0 +1,30 @@
+<h1>Tournament</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tournament_tier.title %>
+</p>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Start</th>
+			<th>Mode</th>
+			<th>Entry Fee</th>
+			<th>DH</th>
+			<th>Park</th>
+			<th>Run Environment</th>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+				<td><%= @tournament_tier.start %></td>
+				<td><%= @tournament_tier.mode %></td>
+				<td><%= @tournament_tier.entry_fee %></td>
+				<td><%= @tournament_tier.dh %></td>
+				<td><%= @tournament_tier.park %></td>
+				<td><%= link_to @tournament_tier.run_environment.year, run_environment_path(@tournament_tier.run_environment) %></td>
+			</tr>
+	</tbody>
+</table>
